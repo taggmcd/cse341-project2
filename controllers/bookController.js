@@ -90,7 +90,7 @@ const update = async (req, res) => {
     book.completedDate = completedDate;
     book.isbn = isbn;
     const updatedBook = await book.save();
-    res.status(200).json(updatedBook);
+    res.status(204).json(updatedBook);
   } catch (error) {
     res.status(400).json({ message: `BookId ${id} could not be updated` });
   }
@@ -104,7 +104,7 @@ const destroy = async (req, res) => {
   try {
     const book = await Book.findById(id);
     await book.deleteOne();
-    res.status(200).json({ message: `BookId ${id} deleted` });
+    res.status(204).json({ message: `BookId ${id} deleted` });
   } catch (error) {
     res.status(500).json({ message: `BookId ${id} could not be deleted` });
   }
