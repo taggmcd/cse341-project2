@@ -26,7 +26,7 @@ const show = async (req, res) => {
   try {
     const book = await Book.findById(id);
     if (!book) {
-      res.status(200).json({ message: `BookId ${id} not found` });
+      res.status(404).json({ message: `BookId ${id} not found` });
     } else {
       res.status(200).json(book);
     }
