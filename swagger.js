@@ -10,7 +10,7 @@ const doc = {
     title: 'Book Tracking API',
     description: 'A RESTful API for the book you have read.',
   },
-  host: `localhost`,
+  host: `cse341-project2-0s3y.onrender.com`,
   basePath: '/books',
   schemes: ['http', 'https'],
 };
