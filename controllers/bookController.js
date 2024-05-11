@@ -43,7 +43,7 @@ const store = async (req, res) => {
     title,
     author,
     description,
-    completed,
+    pages,
     publicationDate,
     completedDate,
     isbn,
@@ -52,7 +52,7 @@ const store = async (req, res) => {
     title,
     author,
     description,
-    completed,
+    pages,
     publicationDate,
     completedDate,
     isbn,
@@ -75,7 +75,7 @@ const update = async (req, res) => {
     title,
     author,
     description,
-    completed,
+    pages,
     publicationDate,
     completedDate,
     isbn,
@@ -85,7 +85,7 @@ const update = async (req, res) => {
     book.title = title;
     book.author = author;
     book.description = description;
-    book.completed = completed;
+    book.pages = pages;
     book.publicationDate = publicationDate;
     book.completedDate = completedDate;
     book.isbn = isbn;

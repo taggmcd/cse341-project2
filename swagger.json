@@ -47,7 +47,7 @@
                 "description": {
                   "example": "any"
                 },
-                "completed": {
+                "pages": {
                   "example": "any"
                 },
                 "publicationDate": {
@@ -126,7 +126,7 @@
                 "description": {
                   "example": "any"
                 },
-                "completed": {
+                "pages": {
                   "example": "any"
                 },
                 "publicationDate": {
