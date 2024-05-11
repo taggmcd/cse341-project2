@@ -5,7 +5,7 @@ const Book = require('../database/schema/book');
 const index = async (req, res) => {
   //#swagger.tags = ['Books']
 
-  // Get all book from mongodb
+  // Get all books from mongodb
   try {
     const books = await Book.find();
     if (books.length === 0) {

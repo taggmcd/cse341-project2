@@ -4,7 +4,7 @@ const BookSchema = new mogoose.Schema({
   title: String,
   author: String,
   description: String,
-  completed: Boolean,
+  pages: Number,
   publicationDate: Date,
   completedDate: Date,
   isbn: Number,

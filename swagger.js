@@ -12,7 +12,7 @@ const doc = {
   },
   host: `cse341-project2-0s3y.onrender.com`,
   basePath: '/books',
-  schemes: ['http', 'https'],
+  schemes: ['https'],
 };
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
