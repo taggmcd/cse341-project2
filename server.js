@@ -7,25 +7,27 @@ const mongoose = require('mongoose');
 // variables
 const port = process.env.PORT || 3000;
 const url = process.env.URL || 'localhost';
+const corsHeaders = require('./middleware/cors');
 
-// Database
-const mongodb = require('./database/mongo.js');
 // Body parser
 app.use(express.json());
 
 // Set CORS headers
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
-  );
-  next();
-});
+app.use(corsHeaders);
+
+// Database
+const mongodb = require('./database/mongo.js');
 
 // Routes
 app.use('/', require('./routes'));
+
+// Error handling
+process.on('uncaughtException', (err, origin) => {
+  console.log(
+    process.stderr.fd,
+    `Caught exception: ${err}\n` + `Exception origin: ${origin}`
+  );
+});
 
 // Connect to MongoDB and start the server
 mongodb.init((err) => {

@@ -1,14 +1,16 @@
 const router = require('express').Router();
 const bookController = require('../controllers/bookController');
+const bookValidator = require('../middleware/bookValidator');
+const bookIdValidator = require('../middleware/bookIdValidator');
 
 router.get('/', bookController.index);
 
-router.get('/:id', bookController.show);
+router.get('/:id', bookIdValidator, bookValidator, bookController.show);
 
-router.post('/', bookController.store);
+router.post('/', bookValidator, bookController.store);
 
-router.put('/:id', bookController.update);
+router.put('/:id', bookIdValidator, bookValidator, bookController.update);
 
-router.delete('/:id', bookController.destroy);
+router.delete('/:id', bookIdValidator, bookController.destroy);
 
 module.exports = router;
