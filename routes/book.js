@@ -5,7 +5,7 @@ const bookIdValidator = require('../middleware/bookIdValidator');
 
 router.get('/', bookController.index);
 
-router.get('/:id', bookIdValidator, bookValidator, bookController.show);
+router.get('/:id', bookIdValidator, bookController.show);
 
 router.post('/', bookValidator, bookController.store);
 
