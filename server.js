@@ -8,21 +8,10 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 const url = process.env.URL || 'localhost';
 
-// Body parser
-app.use(express.json());
-
 // Database
 const mongodb = require('./database/mongo.js');
-
-// mogoose, will move to database/mongo.js when fleshed out
-// mongoose.mongoose
-//   .connect(process.env.MONGODB_URI)
-//   .then(() => {
-//     console.log('Connected via mongoose');
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+// Body parser
+app.use(express.json());
 
 // Set CORS headers
 app.use((req, res, next) => {
