@@ -4,6 +4,7 @@ const app = express();
 const env = require('dotenv').config();
 const passport = require('passport');
 const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
 const GitHubStrategy = require('passport-github').Strategy;
 
 // variables
@@ -15,6 +16,10 @@ const corsHeaders = require('./middleware/cors');
 app
   .use(
     session({
+      cookie: { maxAge: 86400000 },
+      store: new MemoryStore({
+        checkPeriod: 86400000, // prune expired entries every 24h
+      }),
       secret: 'SuperSecretKey',
       resave: false,
       saveUninitialized: true,
