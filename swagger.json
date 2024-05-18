@@ -5,18 +5,13 @@
     "title": "Book Tracking API",
     "description": "A RESTful API for the book you have read."
   },
-  "host": "localhost:3000",
+  "host": "https://cse341-project2-0s3y.onrender.com",
   "basePath": "/api",
-  "schemes": [
-    "https",
-    "http"
-  ],
+  "schemes": ["https", "http"],
   "paths": {
     "/books/": {
       "get": {
-        "tags": [
-          "Books"
-        ],
+        "tags": ["Books"],
         "description": "",
         "responses": {
           "200": {
@@ -28,9 +23,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Books"
-        ],
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -79,9 +72,7 @@
     },
     "/books/{id}": {
       "get": {
-        "tags": [
-          "Books"
-        ],
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -107,9 +98,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Books"
-        ],
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -162,9 +151,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Books"
-        ],
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
